@@ -1,0 +1,23 @@
+[
+    {
+        "_id": "fda3ab69-66e9-4dad-8052-c1aca42e483d",
+        "colId": "history",
+        "containerId": "",
+        "name": "https://api.cloudinary.com/v1_1/dwkri0lj3/resources/image",
+        "url": "https://api.cloudinary.com/v1_1/dwkri0lj3/resources/image",
+        "method": "GET",
+        "sortNum": 0,
+        "created": "2023-07-15T11:55:43.253Z",
+        "modified": "2023-07-15T11:57:49.434Z",
+        "headers": [],
+        "params": [],
+        "auth": {
+            "type": "basic",
+            "basic": {
+                "username": "889895757151459",
+                "password": "X3eUe1bHfAW5FJ67fPqWhR9Oqng"
+            }
+        },
+        "tests": []
+    }
+]

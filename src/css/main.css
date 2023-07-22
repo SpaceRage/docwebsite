@@ -13,11 +13,27 @@ body {
     /* IE and Edge */
     scrollbar-width: none;
     /* Firefox */
+
+    font-family: 'Courier New', monospace;
+    padding: 10px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.header {
+    text-align: center;
+    padding: 32px;
+}
+
+h1 {
+    font-size: 50px;
 }
 
 #gallery li {
     height: 30vw;
-    max-height: 300px;
+    max-height: 1000px;
     cursor: pointer;
     position: relative;
     transition: all 0.5s ease;
@@ -34,7 +50,7 @@ body {
 }
 
 #gallery li:hover {
-    flex-grow: 1.5;
+    /* flex-grow: 1.5; */
 }
 
 .overflow-scroll-gradient {

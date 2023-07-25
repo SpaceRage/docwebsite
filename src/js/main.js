@@ -9,20 +9,21 @@ var headers = new Headers({
     'Authorization': `Basic ${btoa(username + ':' + password)}`
 });
 
-
-fetch('https://api.cloudinary.com/v1_1/dwkri0lj3/resources/image', { headers: headers })
+document.getElementById('gallery').innerHTML = '';
+fetch('https://script.google.com/macros/s/AKfycbx40JV7AnD3iFMuDBohfg8tKbU_lL9wM2d5EZidaLFpj01PX7qliL6zmzAODoJhz5ID/exec')
     .then(response => response.json())
     .then(data => {
         console.log(data);
+
+        data['data'].forEach(obj => {
+            document.getElementById('gallery').innerHTML += `
+            <li><img
+            src="https://drive.google.com/uc?export=view&id=${obj['img_id']}">
+        </li>
+            `;
+        })
     });
 
-for (let i = 0; i < 10; i++) {
-    document.getElementById('gallery').innerHTML += `
-        <li><img
-        src="https://images.nationalgeographic.org/image/upload/t_edhub_resource_key_image/v1638882786/EducationHub/photos/sun-blasts-a-m66-flare.jpg">
-    </li>
-    `;
-}
 
 // let scrollHeight = 0;
 // document.addEventListener('scroll', () => {

@@ -24,6 +24,10 @@ var headers = new Headers({
 //         })
 //     });
 
+function viewImage(el) {
+    console.log("Viewing image.");
+}
+
 document.getElementById('gallery').innerHTML = '';
 fetch('https://docimageapi.airman416.repl.co/images')
     .then(response => response.json())
@@ -33,7 +37,7 @@ fetch('https://docimageapi.airman416.repl.co/images')
         data.forEach(obj => {
             document.getElementById('gallery').innerHTML += `
             <li><img
-            src="https://docimageapi.airman416.repl.co/images/${obj['name']}">
+            src="https://docimageapi.airman416.repl.co/images/${obj['name']}" onclick="viewImage(el)">
         </li>
             `;
         })

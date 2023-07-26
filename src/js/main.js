@@ -9,6 +9,20 @@ var headers = new Headers({
     'Authorization': `Basic ${btoa(username + ':' + password)}`
 });
 
+
+document.onscroll = function () {
+    //console.log(300 - document.documentElement.scrollTop);
+    document.getElementById('splash').style.opacity = Math.max(1.0 - (document.documentElement.scrollTop) / 300.0, 0);
+    if (document.documentElement.scrollTop > 300) {
+        document.getElementById('splash').style.display = 'none';
+    }
+    else {
+        document.getElementById('splash').style.display = 'flex';
+    }
+}
+
+
+
 // document.getElementById('gallery').innerHTML = '';
 // fetch('https://script.google.com/macros/s/AKfycbx40JV7AnD3iFMuDBohfg8tKbU_lL9wM2d5EZidaLFpj01PX7qliL6zmzAODoJhz5ID/exec')
 //     .then(response => response.json())
@@ -24,9 +38,13 @@ var headers = new Headers({
 //         })
 //     });
 
-function viewImage(el) {
-    console.log("Viewing image.");
+function closeViewer() {
+    document.getElementById('viewer').style.display = 'none';
+    document.getElementById('viewer-bg').style.display = 'none';
+    console.log("Hide viewer")
 }
+
+document.getElementById('viewer-bg').addEventListener('click', closeViewer);
 
 document.getElementById('gallery').innerHTML = '';
 fetch('https://docimageapi.airman416.repl.co/images')
@@ -36,12 +54,26 @@ fetch('https://docimageapi.airman416.repl.co/images')
 
         data.forEach(obj => {
             document.getElementById('gallery').innerHTML += `
-            <li><img
-            src="https://docimageapi.airman416.repl.co/images/${obj['name']}" onclick="viewImage(el)">
+            <li><img class="gallery-img"
+            src="https://docimageapi.airman416.repl.co/images/${obj['name']}">
         </li>
             `;
         })
+
+        var imgs = document.getElementsByClassName('gallery-img')
+        console.log(imgs);
+        Array.prototype.forEach.call(imgs, function (el) {
+            el.addEventListener('click', function () {
+                document.getElementById('viewer').src = el.src;
+                document.getElementById('viewer').style.display = 'block';
+                document.getElementById('viewer-bg').style.display = 'block';
+                console.log("Show viewer")
+            });
+        });
     });
+
+
+
 
 
 // let scrollHeight = 0;

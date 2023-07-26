@@ -9,16 +9,31 @@ var headers = new Headers({
     'Authorization': `Basic ${btoa(username + ':' + password)}`
 });
 
+// document.getElementById('gallery').innerHTML = '';
+// fetch('https://script.google.com/macros/s/AKfycbx40JV7AnD3iFMuDBohfg8tKbU_lL9wM2d5EZidaLFpj01PX7qliL6zmzAODoJhz5ID/exec')
+//     .then(response => response.json())
+//     .then(data => {
+//         console.log(data);
+
+//         data['data'].forEach(obj => {
+//             document.getElementById('gallery').innerHTML += `
+//             <li><img
+//             src="https://drive.google.com/uc?export=view&id=${obj['img_id']}">
+//         </li>
+//             `;
+//         })
+//     });
+
 document.getElementById('gallery').innerHTML = '';
-fetch('https://script.google.com/macros/s/AKfycbx40JV7AnD3iFMuDBohfg8tKbU_lL9wM2d5EZidaLFpj01PX7qliL6zmzAODoJhz5ID/exec')
+fetch('https://docimageapi.airman416.repl.co/images')
     .then(response => response.json())
     .then(data => {
         console.log(data);
 
-        data['data'].forEach(obj => {
+        data.forEach(obj => {
             document.getElementById('gallery').innerHTML += `
             <li><img
-            src="https://drive.google.com/uc?export=view&id=${obj['img_id']}">
+            src="https://docimageapi.airman416.repl.co/images/${obj['name']}">
         </li>
             `;
         })

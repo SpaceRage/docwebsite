@@ -32,7 +32,6 @@ h1 {
 }
 
 #gallery li {
-    flex-basis: 50%;
     width: 0.5vw;
     cursor: pointer;
     position: relative;

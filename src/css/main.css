@@ -33,8 +33,7 @@ h1 {
 
 #gallery li {
     flex-basis: 50%;
-    height: 30vw;
-    max-height: 1000px;
+    width: 0.5vw;
     cursor: pointer;
     position: relative;
     transition: all 0.5s ease;

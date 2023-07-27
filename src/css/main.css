@@ -35,6 +35,10 @@ h1 {
     font-size: 7.5vw;
 }
 
+h2 {
+    font-size: 50px;
+}
+
 #gallery li {
     width: 40vw;
     cursor: pointer;

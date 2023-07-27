@@ -46,6 +46,14 @@ function closeViewer() {
 
 document.getElementById('viewer-bg').addEventListener('click', closeViewer);
 
+document.getElementById('down').addEventListener('click', () => {
+    document.documentElement.scrollTop = 300;
+});
+
+document.getElementById('top').addEventListener('click', () => {
+    document.documentElement.scrollTop = 300;
+});
+
 document.getElementById('gallery').innerHTML = '';
 fetch('https://docimageapi.airman416.repl.co/images')
     .then(response => response.json())

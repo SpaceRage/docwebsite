@@ -1,13 +1,13 @@
-import { Cloudinary } from "@cloudinary/url-gen";
+// import { Cloudinary } from "@cloudinary/url-gen";
 
-const cld = new Cloudinary({ cloud: { cloudName: "dwkri0lj3" } });
+// const cld = new Cloudinary({ cloud: { cloudName: "dwkri0lj3" } });
 
-var username = "889895757151459";
-var password = "X3eUe1bHfAW5FJ67fPqWhR9Oqng";
+// var username = "889895757151459";
+// var password = "X3eUe1bHfAW5FJ67fPqWhR9Oqng";
 
-var headers = new Headers({
-  Authorization: `Basic ${btoa(username + ":" + password)}`,
-});
+// var headers = new Headers({
+//   Authorization: `Basic ${btoa(username + ":" + password)}`,
+// });
 
 document.onscroll = function () {
   //console.log(300 - document.documentElement.scrollTop);
